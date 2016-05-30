@@ -1,7 +1,7 @@
 {
   "name": "single-resource-api",
   "version": "0.0.1",
-  "description": "Single resource API using flatiron's director router and MongoDB.",
+  "description": "Single resource API using restify and MongoDB.",
   "main": "index.js",
   "scripts": {
     "test": "gulp test",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/goodwid/single-resource-API#readme",
   "devDependencies": {
     "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
     "eslint": "^2.10.2",
     "gulp": "^3.9.1",
     "gulp-eslint": "^2.0.0",
@@ -28,7 +29,6 @@
   },
   "dependencies": {
     "body-parser": "^1.15.1",
-    "director": "^1.2.8",
     "mongoose": "^4.4.19",
     "morgan": "^1.7.0"
   }
