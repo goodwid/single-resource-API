@@ -27,6 +27,9 @@
     "mocha": "^2.4.5"
   },
   "dependencies": {
-    "director": "^1.2.8"
+    "body-parser": "^1.15.1",
+    "director": "^1.2.8",
+    "mongoose": "^4.4.19",
+    "morgan": "^1.7.0"
   }
 }

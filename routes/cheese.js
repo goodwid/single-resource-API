@@ -1,18 +1,18 @@
-const director = require('director');
+
 const bodyParser = require('body-parser').json();
 const Cheese = require('../models/cheese');
 
-const router = new director.http.Router();
 
-router.get('/', (req, res) => {
-  const query = req.query.type ? {type: req.query.type} : {};
+
+server.get('/cheese', () => {
+  const query = this.req.query.type ? {type: this.req.query.type} : {};
   Cheese.find(query)
     .select('name family')
     .lean()
-    .then( results => res.json(results));
+    .then( results => this.res.send(results));
 });
 
-router.get('/:id', (req, res) => {
+server.get('/:id', (req, res) => {
   Cheese.findById(req.params.id)
     .then(result => {
       if (result) {
@@ -22,8 +22,8 @@ router.get('/:id', (req, res) => {
       }
     });
 });
- 
-router.post('/', bodyParser, (req, res) => {
+
+server.post('/', bodyParser, (req, res) => {
   new Cheese(req.body).save()
     .then(result => res.send(result))
     .catch(error => {
@@ -32,7 +32,7 @@ router.post('/', bodyParser, (req, res) => {
     });
 });
 
-router.put('/:id', bodyParser, (req, res) => {
+server.put('/:id', bodyParser, (req, res) => {
   Cheese.findById(req.params.id)
     .then(result => {
       new Cheese(Object.assign(result, req.body)).save()
@@ -43,7 +43,7 @@ router.put('/:id', bodyParser, (req, res) => {
         });
     });
 });
-router.delete('/:id', (req, res) => {
+server.delete('/:id', (req, res) => {
   Cheese.findByIdAndRemove(req.params.id)
     .then(result => res.json(result));
 });
