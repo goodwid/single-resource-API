@@ -1,0 +1,29 @@
+{
+  "name": "single-resource-api",
+  "version": "0.0.1",
+  "description": "Single resource API using flatiron's director router and MongoDB.",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test",
+    "dev": "gulp",
+    "lint": "gulp lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goodwid/single-resource-API.git"
+  },
+  "author": "David Goodwin <goodwid@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/goodwid/single-resource-API/issues"
+  },
+  "homepage": "https://github.com/goodwid/single-resource-API#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^2.10.2",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-spawn-mocha": "^2.2.2",
+    "mocha": "^2.4.5"
+  }
+}
